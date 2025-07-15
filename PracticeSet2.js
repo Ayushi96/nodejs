@@ -35,6 +35,13 @@ const server = http.createServer((req, res) => {
       const first = bodyObject.get("number1");
       const second = bodyObject.get("number2");
       sum = additionFn(first, second);
+      /**
+       * We need to write the response inside this end event ka callback only!
+       * Reason being, if we write this outside then that code will get executed first
+       * and the sum will be undefined at that time. At a later point of time when the
+       * end event will occur, i.e the chunks of stream end, then the variable sum will
+       * be populated with the result. 
+       */
       res.write(`The sum is ${sum}`);
       return res.end();
     });

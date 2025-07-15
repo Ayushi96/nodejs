@@ -67,3 +67,11 @@
  * V8 us result wali line ko execute kar k print kar dega. 
  * 
  */
+
+// ------------- PRIORITY -------------------
+
+/**
+ * 1. timers
+ * 2. pending callbacks
+ * 3. 
+ */

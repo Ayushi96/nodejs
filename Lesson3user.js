@@ -35,6 +35,14 @@ requestListener = (req, res) => {
     req.url.toLowerCase() === "/submit-details" &&
     req.method === "POST"
   ) {
+    /**
+     * write file sync ensures that this file writing work is done by the main 
+     * thread of JS only. This is a blocking task.
+     * Hence, it is better to use fs.writeFile()
+     * 
+     * fs.writeFile('user.txt', JSON.stringify(bodyObject), error => {
+     * console.log()});
+     */
     fs.writeFileSync("user.txt", "Ayushi");
     // redirection
     res.statusCode = 302;
