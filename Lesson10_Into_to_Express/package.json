@@ -1,0 +1,15 @@
+{
+  "name": "lesson10_into_to_express",
+  "version": "1.0.0",
+  "main": "intro.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ayushi",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

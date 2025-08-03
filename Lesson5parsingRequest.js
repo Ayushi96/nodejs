@@ -5,6 +5,11 @@
  * Continues flow of data in a continuous way.
  * The data does not get transferred in a chunk as a whole,
  * rather it gets transferred in parts, hence the name Stream.
+ * 
+ * DUPLEX STREAM: dono taraf se data ek bar me aa ja sakta hai.
+ * As opposed to walkie-talkie, jisme ek bar me ek hi taraf se data
+ * send ho pata hai, that is why over and out kehte hain taki 
+ * next person can start speaking. Duplex me aisa nahi karna padta hai.
  */
 
 // ------------------ SOCKET -------------------
@@ -16,7 +21,7 @@
  * Hence, Socket is the gate for communication.
  *
  * PURPOSE: helps us join with a connection. So socket is the gateway for communication.
- * Usi se data aata jata hai.
+ * Socket se data aata jata hai.
  *
  * REPRESENTATION: localhost:3000
  */
@@ -112,7 +117,8 @@ const server = http.createServer((req, res) => {
 
     req.on("end", () => {
       // once all the data has been received, we will create a parsed body from the buffer
-      const fullBody = Buffer.concat(body).toString(); // Buffer is a built-in class of Node.js used to handle Binary data directly
+      const fullBody = Buffer.concat(body).toString(); // Buffer is a built-in class of Node.js
+      //  used to handle Binary data directly
       console.log(fullBody); // name=Ayushi+Vishwakarma&gender=female
       const params = new URLSearchParams(fullBody);
       const bodyObject = {};
