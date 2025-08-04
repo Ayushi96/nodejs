@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/output.css">
+    <title>Document</title>
+</head>
+<body >
+   <nav>
+        <li class="flex flex-row bg-red-400">
+            <ul class="p-4 text-white"><a href="/">Go To Home</a></ul>
+            <ul class="p-4 text-white"><a href="/host/add-home"> Add Home</a></ul>
+        </li>
+    </nav>
+    <header class="flex justify-center">
+        <h1 class="text-2xl font-bold m-4 text-red-500">Register your home here </h1>
+    </header>
+    <main>
+        <form action="/host/add-home" method="POST" class="flex  flex-col items-center justify-center p-4">
+            <input type="text" name="houseName" placeholder="Enter the name of your house" class="border-2 w-md border-red-500 m-1 rounded-sm"/>
+            <input type="submit" class="bg-red-400 rounded-sm w-md flex m-1"/>
+        </main>
+</body>
+</html>
