@@ -1,0 +1,11 @@
+ <nav>
+        <li class="flex flex-row bg-red-400">
+            <ul class="p-4 text-white <%= activeRoute === '/' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/">Home</a></ul>
+            <ul class="p-4 text-white  <%= activeRoute === '/add-home' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/host/add-home"> Add Home</a></ul>
+            <ul class="p-4 text-white  <%= activeRoute === '/host-home-list' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/host/host-home-list"> Host Home List</a></ul>
+            <ul class="p-4 text-white  <%= activeRoute === '/edit-home' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/host/edit-home"> Edit Home </a></ul>
+            <ul class="p-4 text-white  <%= activeRoute === '/bookings' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/host/bookings"> Bookings</a></ul>
+            <ul class="p-4 text-white  <%= activeRoute === '/favorite-list' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/host/favorite-list"> Favorite List</a></ul>
+            <ul class="p-4 text-white  <%= activeRoute === '/home-details' ? 'font-semibold border-b-2 border-red-700': '' %>"><a href="/host/home-details"> Home Details</a></ul>
+        </li>
+    </nav>
