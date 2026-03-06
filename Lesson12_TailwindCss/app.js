@@ -24,6 +24,9 @@ app.use("/host", hostRouter);
 //router for the person renting airbnb
 app.use(userRouter);
 
+// add a middleware to serve static files
+app.use(express.static(path.join(rootDir, "public")));
+
 /**
  * One way to handle all the user request is move these
  * functions in another file inside routes folder.

@@ -3,7 +3,8 @@ const path = require("path");
 
 const express = require("express");
 const { hostRouter } = require("./routes/hostRouter");
-const userRouter = require("./routes/userRouter");
+const storeRouter = require("./routes/storeRouter");
+const errorsController = require("./controllers/errors");
 // Root path
 const rootDir = require("./utils/pathUtil");
 
@@ -15,21 +16,20 @@ app.set("view engine", "ejs");
 // jo engine use karna hai usk views kis path pe hain
 app.set("views", "views");
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.use("/host", hostRouter);
 
 //router for the person renting airbnb
-app.use(userRouter);
+app.use(storeRouter);
+
+app.use("/host", hostRouter);
 
 // add a middleware to serve static files
 app.use(express.static(path.join(rootDir, "public")));
 
 // NOTE: this is the last middleware ( which is important for functionality.)
-app.use((req, res, next) => {
-  // res.status(404).sendFile(path.join(rootDir, "views", "404.html"));
-  res.render("404");
-});
+app.use(errorsController.handle404);
 
 app.listen(PORT, () => {
   console.log(`Server started on Port: ${PORT}`);

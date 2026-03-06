@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/output.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <%- include('partials/navigation') %>
+
+    <header class="flex justify-center">
+      <h1 class="text-2xl font-bold m-4 text-red-500">Register your home here</h1>
+    </header>
+
+    <main>
+      <form action="/host/add-home" method="POST" class="flex flex-col items-center justify-center p-4">
+        <input type="text" name="houseName" placeholder="Enter the name of your house"
+          class="border-2 w-80 border-red-500 m-1 rounded-sm px-2 py-1" required />
+        <input type="text" name="location" placeholder="Location" required
+          class="border-2 w-80 border-red-500 m-1 rounded-sm px-2 py-1">
+        <div class="flex flex-row">
+          <input type="number" name="price" placeholder="Price per night" required
+            class="border-2 w-40 border-red-500 m-1 rounded-sm px-2 py-1">
+
+          <input type="number" name="rating" placeholder="rating"
+            class="border-2 w-40 border-red-500 m-1 rounded-sm px-2 py-1">
+        </div>
+
+        <input type="file" name="image" accept="image/*" class="mb-4 border border-gray-300 rounded p-2 w-80"
+           />
+
+
+        <button type="submit" class="bg-red-400 text-white rounded-sm w-80 m-1 py-2 hover:bg-red-500 transition">
+          Submit
+        </button>
+      </form>
+    </main>
+</body>
+
+</html>

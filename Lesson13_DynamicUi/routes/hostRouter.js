@@ -1,22 +1,27 @@
 // Core Module
-const path = require("path");
 const express = require("express");
 // create a new router
 const hostRouter = express.Router();
 
+const registeredHomes = [];
+
 hostRouter.post("/add-home", (req, res, next) => {
-  console.log("request body: ", req.body);
-  // res.send(`<h1> Succesfully registered home!</h1>
-  //   <a href="/">Go Home</a>`);
-  res.sendFile(path.join(__dirname, "../", "views", "home-added-successfully.html"));
+  registeredHomes.push(req.body);
+
+  res.sendFile;
+  // path.join(__dirname, "../", "views", "home-added-successfully.html")
+  console.log("active route is ", req.url);
+  res.render("home-added-successfully", {
+    pageTitle: "Successfully registered home!",
+    activeRoute: req.url,
+  });
 });
 
 hostRouter.get("/add-home", (req, res, next) => {
-  // res.send(`<h1>Register your home here: </h1>
-  //       <form action="/host/add-home" method="POST">
-  //       <input type="text" name="houseName" placeholder="Enter the name of your house" />
-  //       <input type="submit" />`);
-  res.sendFile(path.join(__dirname, "../", "views", "add-home.html"));
+  // res.sendFile(path.join(__dirname, "../", "views", "add-home.html"));
+  console.log("active route is ", req.url);
+  res.render("add-home", { activeRoute: req.url });
 });
 
-module.exports = hostRouter;
+exports.hostRouter = hostRouter;
+exports.registeredHomes = registeredHomes;
