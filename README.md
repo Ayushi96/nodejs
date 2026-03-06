@@ -8,3 +8,7 @@ The MVC concept is also explained clearly.
 This repo follows the course on Node Js by Prashant Jain. 
 
 https://github.com/Complete-Coding/NodeJS_Complete_YouTube/blob/main/Chapter%2013%20-%20MVC/tailwind.config.js
+
+## Follow files in this order:
+
+* 
