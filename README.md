@@ -11,4 +11,5 @@ https://github.com/Complete-Coding/NodeJS_Complete_YouTube/blob/main/Chapter%201
 
 ## Follow files in this order:
 
-* 
+* Summary.md
+* Corresponding lesson files (js)

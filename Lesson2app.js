@@ -48,6 +48,10 @@ function requestListener(req, res) {
 
 // create a server
 const server = http.createServer(requestListener);
+/**
+ * Just creating the server won't work on its own when you run the program. 
+ * You will need to listen to the client request
+ */
 
 /* listen to port 3000
 Your machine will be doing multiple things, 
@@ -60,3 +64,7 @@ const PORT = 3000;
 server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+/**
+ * Whenever you make any code change in the server, you will have to restart the server for the change to take effect.
+ */

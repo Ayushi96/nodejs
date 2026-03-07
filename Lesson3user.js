@@ -31,7 +31,9 @@ requestListener = (req, res) => {
     res.write("</body></html>");
     // if you don't write return then the client will keep on waiting for response.
     return res.end();
-  } else if (
+  } 
+  // we also check the method should be POST so that no one directly comes to this url
+  else if (
     req.url.toLowerCase() === "/submit-details" &&
     req.method === "POST"
   ) {
