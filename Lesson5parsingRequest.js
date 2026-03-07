@@ -17,7 +17,8 @@
 /**
  * ANALOGY: When we want to charge anything, we plug in the charger in the socket.
  * There exists a circuit of wires in the walls already, and the socket helps you
- * connect with that circuit of wires.
+ * connect with that circuit of wires. So basically the network of wires is already present
+ * hum socket ka use kar re hain to connect to that network. 
  * Hence, Socket is the gate for communication.
  *
  * PURPOSE: helps us join with a connection. So socket is the gateway for communication.
@@ -50,7 +51,8 @@
  * But the sequence of the data matters in most contexts.
  * Hence, in order to preserve this order of data we create a Buffer.
  * So, buffer will collect the amount of data in sequence that makes sense,
- * and then provides for further processing.
+ * and then provides for further processing. Thode rukne ki zagah hai zahan pe
+ * data rukta hai and waha pe ordering sahi ki jati hai chunks ki. 
  */
 
 /**
@@ -58,6 +60,10 @@
  * req --> as soon as the first chunk of data is received, it says that the
  * request has been received. But the data can be huge as well, so we need to handle
  * the whole data.
+ * Yaha pe sab event driven hota hai. Jab server pe request bheji tuh matlab request ka
+ * phla chunk aa gaya, but you never know ki request kaafi badi ho abhi header hi aya hai.
+ * Tuh hume ek ek chunk padhna padega in case of implementing with Node JS alone. 
+ * Line 104 : req.on('data') --> event 
  */
 
 const http = require("http");
